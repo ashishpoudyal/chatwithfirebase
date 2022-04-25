@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:finalfirechatapp/methods/methods.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,14 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: Text("Home Screen"),
+          title: const Text("Home Screen"),
         ),
         body: isLoading
             ? Center(
-                child: Container(
+                child: SizedBox(
                   height: size.height / 20,
                   width: size.height / 20,
-                  child: CircularProgressIndicator(),
+                  child: const CircularProgressIndicator(),
                 ),
               )
             : Column(
@@ -74,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   ElevatedButton(
                     onPressed: onSearch,
-                    child: Text("Search"),
+                    child: const Text("Search"),
                   ),
                   SizedBox(
                     height: size.height / 30,
@@ -82,17 +81,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   userMap != null
                       ? ListTile(
                           onTap: () {},
-                          leading: Icon(Icons.account_box, color: Colors.black),
+                          leading: const Icon(Icons.account_box,
+                              color: Colors.black),
                           title: Text(
                             userMap!['name'],
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.black,
                               fontSize: 17,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           subtitle: Text(userMap!['email']),
-                          trailing: Icon(Icons.chat, color: Colors.black),
+                          trailing: const Icon(Icons.chat, color: Colors.black),
                         )
                       : Container(),
                 ],
