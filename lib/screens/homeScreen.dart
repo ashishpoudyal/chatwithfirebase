@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:finalfirechatapp/methods/methods.dart';
+import 'package:finalfirechatapp/screens/chatroom.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -85,7 +86,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   userMap != null
                       ? ListTile(
-                          onTap: () {},
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ChatRoom(),
+                              )),
                           leading: const Icon(Icons.account_box,
                               color: Colors.black),
                           title: Text(
