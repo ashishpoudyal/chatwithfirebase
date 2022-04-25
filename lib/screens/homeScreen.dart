@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:finalfirechatapp/methods/methods.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,6 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Home Screen"),
+          actions: [
+            IconButton(
+                onPressed: () => logOut(context), icon: Icon(Icons.logout))
+          ],
         ),
         body: isLoading
             ? Center(
